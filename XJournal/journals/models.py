@@ -5,8 +5,8 @@ from django.forms import ModelForm
 class Journal(models.Model):
     title = models.CharField(max_length=255)
     text = models.TextField()
-    user = models.ForeignKey(User)
     private = models.BooleanField()
+    user = models.ForeignKey(User)
     # Add a boolean field here to indicate whether it is public or private
     
 class JournalForm(ModelForm):

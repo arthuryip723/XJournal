@@ -12,3 +12,4 @@ class Journal(models.Model):
 class JournalForm(ModelForm):
     class Meta:
         model = Journal
+        exclude = ['user']

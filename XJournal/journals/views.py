@@ -14,6 +14,7 @@ def index(request):
 #     return render_to_response('journals/index.html', {'journals': journals})
     return render(request, 'journals/index.html', {'journals': journals})
 
+@login_required
 def new(request):
     if request.POST:
         form = JournalForm(request.POST)

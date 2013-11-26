@@ -22,7 +22,7 @@ def new(request):
             journal = form.save(commit=False)
             journal.user = request.user
             journal.save()
-            return redirect('/')
+            return redirect('/journals')
             # redirect to index
     else:
         form = JournalForm()

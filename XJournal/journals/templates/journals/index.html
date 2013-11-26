@@ -1,0 +1,9 @@
+{% if journals %}
+	<ul>
+	{% for journal in journals %}
+		<li>{{ journal }}</li>
+	{% endfor %}
+	</ul>
+{% else %}
+	<p>No journals are available.</p>
+{% endif %}

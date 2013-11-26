@@ -7,6 +7,9 @@ class Journal(models.Model):
     text = models.TextField()
     private = models.BooleanField()
     user = models.ForeignKey(User)
+    
+    def __unicode__(self):  # Python 3: def __str__(self):
+        return self.title
     # Add a boolean field here to indicate whether it is public or private
     
 class JournalForm(ModelForm):

@@ -1,9 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
 {% if journals %}
 	<ul>
 	{% for journal in journals %}
-		<li>{{ journal }}</li>
+		<li><a href="/journals/{{ journal.id }}">{{ journal }}</a></li>
 	{% endfor %}
 	</ul>
 {% else %}
 	<p>No journals are available.</p>
 {% endif %}
+{% endblock %}

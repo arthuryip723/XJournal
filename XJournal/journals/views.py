@@ -38,7 +38,7 @@ def detail(request, journal_id):
 #         raise Http404
 #     return render(request, 'journals/detail.html', {'journal': journal})            
     journal = get_object_or_404(Journal, pk = journal_id)
-    return render(request, 'journals/details.html', {'poll': journal})
+    return render(request, 'journals/detail.html', {'journal': journal})
 
 # view a journal specified by the id
 

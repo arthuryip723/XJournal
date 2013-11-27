@@ -5,6 +5,8 @@ from django.forms import ModelForm
 class Journal(models.Model):
     title = models.CharField(max_length=255)
     text = models.TextField()
+    pub_date = models.DateTimeField('date published')
+    rev_date = models.DateTimeField('date revised')
     private = models.BooleanField()
     user = models.ForeignKey(User)
     

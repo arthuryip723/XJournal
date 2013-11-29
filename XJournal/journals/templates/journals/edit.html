@@ -1,0 +1,7 @@
+<form method="post" action="{% url 'journals:edit' form.instance.id %}">
+{% csrf_token %}
+<table>
+{{form}}
+</table>
+<input type="submit" value="Submit Form"/>
+</form>

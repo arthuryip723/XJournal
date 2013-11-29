@@ -17,4 +17,4 @@ class Journal(models.Model):
 class JournalForm(ModelForm):
     class Meta:
         model = Journal
-        exclude = ['user']
+        exclude = ['user', 'pub_date', 'rev_date']

@@ -4,7 +4,15 @@
 {% if journals %}
 	<ul>
 	{% for journal in journals %}
-		<li><a href="/journals/{{ journal.id }}">{{ journal }}</a></li>
+		<li>
+			<div>
+				<a href="/journals/{{ journal.id }}">{{ journal }}</a>
+				<p>{{ journal.text }}</p>
+				<span>{{ journal.pub_date }}</span>
+				<span><a href="{% url 'journals:edit' journal.id %}">edit</a></span>
+				<span><a href="#">delete</a></span>
+			</div>
+		</li>
 	{% endfor %}
 	</ul>
 {% else %}

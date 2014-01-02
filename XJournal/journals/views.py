@@ -57,7 +57,14 @@ class DetailView(generic.DetailView):
 def edit(request, journal_id):
 #     record = Journal.objects.get(pk=journal_id)
     if request.POST:
-        return redirect('/journals')
+        journal = get_object_or_404(Journal, pk=journal_id)
+        form = JournalForm(request.POST, instance=journal)
+        if form.is_valid():
+            form.save()
+            return redirect('/journals')
+        else:
+            #return an error message
+            pass
         #redirect to index?
     else:
         journal = get_object_or_404(Journal, pk=journal_id)

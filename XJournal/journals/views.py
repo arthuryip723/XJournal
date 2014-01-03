@@ -58,7 +58,9 @@ def edit(request, journal_id):
 #     record = Journal.objects.get(pk=journal_id)
     if request.POST:
         journal = get_object_or_404(Journal, pk=journal_id)
+        journal.rev_date = timezone.now()
         form = JournalForm(request.POST, instance=journal)
+#         form.rev_date = timezone.now()
         if form.is_valid():
             form.save()
             return redirect('/journals')
@@ -73,7 +75,8 @@ def edit(request, journal_id):
 
 def delete(request, journal_id):
     journal = get_object_or_404(Journal, pk=journal_id)
-    pass
+    journal.delete()
+    return redirect('/journals')
 
 # view a journal specified by the id
 

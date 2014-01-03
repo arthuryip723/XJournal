@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+<a href="{% url 'journals:new' %}">new journal</a>
 {% if journals %}
 	<ul>
 	{% for journal in journals %}
@@ -9,8 +10,9 @@
 				<a href="/journals/{{ journal.id }}">{{ journal }}</a>
 				<p>{{ journal.text }}</p>
 				<span>{{ journal.pub_date }}</span>
+				<span>{{ journal.rev_date }}</span>
 				<span><a href="{% url 'journals:edit' journal.id %}">edit</a></span>
-				<span><a href="#">delete</a></span>
+				<span><a href="{% url 'journals:delete' journal.id %}">delete</a></span>
 			</div>
 		</li>
 	{% endfor %}

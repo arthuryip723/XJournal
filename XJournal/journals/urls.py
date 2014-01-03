@@ -8,6 +8,7 @@ urlpatterns = patterns('',
     url(r'^(?P<pk>\d+)/$', views.DetailView.as_view(), name='detail'),
     url(r'^new/$', views.new, name='new'),
     url(r'^(?P<journal_id>\d+)/edit/$', views.edit, name='edit'),
+    url(r'^(?P<journal_id>\d+)/delete/$', views.delete, name='delete'),
     url(r'^pdf/$', views.getPDF, name='pdf')
 )
 

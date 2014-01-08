@@ -6,7 +6,8 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    # url(r'^$', 'XJournal.views.home', name='home'),
+#     url(r'^$', 'XJournal.views.home', name='home'),
+    url(r'^$', 'journals.views.index', name='index'),
     # url(r'^XJournal/', include('XJournal.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
